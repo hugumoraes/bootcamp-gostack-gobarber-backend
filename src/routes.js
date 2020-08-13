@@ -21,6 +21,7 @@ routes.post('/sessions', SessionController.store);
 
 routes.get('/providers', ProviderController.index);
 
+routes.get('/appointments', authMiddleware, AppointmentController.index);
 routes.post('/appointments', authMiddleware, AppointmentController.store);
 
 routes.post('/files', upload.single('file'), FileController.store);
